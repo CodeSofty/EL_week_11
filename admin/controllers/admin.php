@@ -1,10 +1,3 @@
-<?php 
-
-session_start();
-require_once('../model/admin_db.php');
-
-?>
-
 <?php
 switch($action) {
     case "register":
@@ -14,13 +7,8 @@ switch($action) {
 
         
         include('util/valid_register.php');
-            valid_registration($username, $password, $confirm_password);
-            echo '<script>alert("Hitting here.")</script>';
-        if(valid_registration($username, $password, $confirm_password)) {
-            $errors = valid_registration($username, $password, $confirm_password);
-            foreach($errors as $error) {
-                echo '<ul>' . $error . '</ul><br/><br/>';
-            }
+        $errors = valid_registration($username, $password, $confirm_password);
+        if($errors) {
             include('view/register.php');
         } else {
                 add_admin($username,$password);

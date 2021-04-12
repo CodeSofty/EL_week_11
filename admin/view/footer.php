@@ -8,4 +8,3 @@
 if(!isset($username) && $action != "show_register" && $action != "logout") { ?>
     <a href='.?action=show_register'>Register New Admin User</a> 
 <?php } ?>
-<a href='.?action=show_register'>Register New Admin User</a>

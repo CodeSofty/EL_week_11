@@ -3,6 +3,11 @@ include('view/header.php');
 ?>
 
 
+<?php if($errors) {
+    echo $errors;
+} ?>
+
+
 <h2>Register a new admin user</h2>
 
 <div class="container">

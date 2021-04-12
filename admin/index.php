@@ -1,3 +1,5 @@
+<?php session_start();
+?>
 
 <?php
 
@@ -10,9 +12,9 @@ require('../model/types_db.php');
 require('../model/vehicles_db.php');
 require('../model/admin_db.php');
 
-    $username = filter_input(INPUT_POST,'username', FILTER_SANITIZE_STRING);
-    $password = filter_input(INPUT_POST,'password', FILTER_SANITIZE_STRING);
-    $confirm_password = filter_input(INPUT_POST,'confirm_password', FILTER_SANITIZE_STRING);
+$username = filter_input(INPUT_POST,'username', FILTER_SANITIZE_STRING);
+$password = filter_input(INPUT_POST,'password', FILTER_SANITIZE_STRING);
+$confirm_password = filter_input(INPUT_POST,'confirm_password', FILTER_SANITIZE_STRING);
 
 $type_name = filter_input(INPUT_POST, 'type_name', FILTER_SANITIZE_STRING);
 $class_name = filter_input(INPUT_POST, 'class_name', FILTER_SANITIZE_STRING);
