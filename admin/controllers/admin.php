@@ -1,9 +1,11 @@
 <?php 
 
 session_start();
+require_once('../model/admin_db.php');
 
-require('model/admin_db.php');
+?>
 
+<?php
 switch($action) {
     case "register":
         $username = filter_input(INPUT_POST,'username', FILTER_SANITIZE_STRING);
@@ -13,17 +15,18 @@ switch($action) {
         
         include('util/valid_register.php');
             valid_registration($username, $password, $confirm_password);
-        if(valid_registration($username, $password, $confirm_password)) {
-            $errors = valid_registration($username, $password, $confirm_password);
-            foreach($errors as $error) {
-                echo '<ul>' . $error . '</ul><br/><br/>';
-            }
-            include('view/register.php');
-        } else {
-                add_admin($username,$password);
-                $_SESSION['is_valid_admin'] = true;
-                echo "hello";
-        }
+            echo '<script>alert("Hitting else as if $items is null.")</script>';
+        // if(valid_registration($username, $password, $confirm_password)) {
+        //     $errors = valid_registration($username, $password, $confirm_password);
+        //     foreach($errors as $error) {
+        //         echo '<ul>' . $error . '</ul><br/><br/>';
+        //     }
+        //     include('view/register.php');
+        // } else {
+        //         add_admin($username,$password);
+        //         $_SESSION['is_valid_admin'] = true;
+                header('Location: .?action=list_vehicles');
+        // }
         break;
 
 case "show_register":
