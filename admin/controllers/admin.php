@@ -15,18 +15,18 @@ switch($action) {
         
         include('util/valid_register.php');
             valid_registration($username, $password, $confirm_password);
-            echo '<script>alert("Hitting else as if $items is null.")</script>';
-        // if(valid_registration($username, $password, $confirm_password)) {
-        //     $errors = valid_registration($username, $password, $confirm_password);
-        //     foreach($errors as $error) {
-        //         echo '<ul>' . $error . '</ul><br/><br/>';
-        //     }
-        //     include('view/register.php');
-        // } else {
-        //         add_admin($username,$password);
-        //         $_SESSION['is_valid_admin'] = true;
+            echo '<script>alert("Hitting here.")</script>';
+        if(valid_registration($username, $password, $confirm_password)) {
+            $errors = valid_registration($username, $password, $confirm_password);
+            foreach($errors as $error) {
+                echo '<ul>' . $error . '</ul><br/><br/>';
+            }
+            include('view/register.php');
+        } else {
+                add_admin($username,$password);
+                $_SESSION['is_valid_admin'] = true;
                 header('Location: .?action=list_vehicles');
-        // }
+        }
         break;
 
 case "show_register":

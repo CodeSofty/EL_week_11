@@ -1,7 +1,6 @@
 
 <?php
 
-echo '<script>alert("'.$action.'")</script>';
 //require models
 
 require('../model/database.php');

@@ -5,21 +5,7 @@ include('view/header.php');
 
 <h2>Register a new admin user</h2>
 
-<form action ="." method="POST">
-<label>Username:</label>
-<input type="hidden" name="action" value="register">
-<input type="text" name="username" required> 
-<label>Password:</label>
-<input type="hidden" name="action" value="register">
-<input type="text" name="password" required>
-<label>Confirm Password:</label>
-<input type="hidden" name="action" value="register">
-<input type="text" name="confirm_password" required>
-<button type="submit">Submit</button>
-
-
-</form>
-<!-- <div class="container">
+<div class="container">
     <form action = "." method="POST">
         <div class="form-group">
             <label>Username:</label>
@@ -39,7 +25,7 @@ include('view/header.php');
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
-</div> -->
+</div>
 
 <?php 
 
