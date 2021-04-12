@@ -1,9 +1,3 @@
-<!-- 
- Clean up links so they're not redundant
- -->
-
-
-
 
 <?php
 //require models
@@ -13,6 +7,7 @@ require('../model/classes_db.php');
 require('../model/makes_db.php');
 require('../model/types_db.php');
 require('../model/vehicles_db.php');
+require('../model/admin_db.php');
 
 
 
@@ -45,6 +40,8 @@ if(!$class_id) {
     $class_id = filter_input(INPUT_GET, 'class_id', FILTER_VALIDATE_INT); 
 }
 
+
+
 //List all possible vehicles
 // Make sure parameter is capitalized like $result['Make'] and $result['ID'] or it won't work
 
@@ -55,9 +52,14 @@ if(!$action) {
 }
 
 
+
 if(!$action) {
     $action = "list_vehicles";
 } 
+
+if($action == "login" || $action == "show_login" || $action == "register" || $action == "show_register" || $action == "logout"){
+    include('controllers/admin.php');
+}
 
 if($action == "list_vehicles" || $action == "delete_vehicle" || $action == "add_vehicle") {
     include('controllers/vehicles.php');
