@@ -12,6 +12,9 @@
 <h1>Zippy Used Auto</h1>
 
 <?php 
-
+// if(!isset($_SESSION['is_valid_admin'])) {
+//     header('Location: .?action=show_login');
+// }
+// include('util/valid_admin.php');
 
 ?>

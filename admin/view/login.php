@@ -10,7 +10,7 @@ if($login_message) {
 
 ?>
 
-<form action = "." method="get"  name="action" value="login">
+<form action = "." method="POST">
     <div class="form-group">
         <label>Username:</label>
         <input type="hidden" name="action" value="login">
@@ -19,7 +19,6 @@ if($login_message) {
 
     <div class="form-group">
         <label>Password:</label>
-        <input type="hidden" name="action" value="login">
         <input type="text" name="password" maxlength 20 autofocus required> 
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
