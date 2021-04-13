@@ -8,9 +8,9 @@ include('view/header.php');
 
 <div class="container">
     <form action = "." method="POST">
+    <input type="hidden" name="action" value="register">
         <div class="form-group">
             <label>Username:</label>
-            <input type="hidden" name="action" value="register">
             <input type="text" name="username" maxlength 20 autofocus required> 
         </div>
 

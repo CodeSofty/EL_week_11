@@ -1,7 +1,6 @@
 <?php 
 
 
-
 switch($action) {
     case "get_make":
         // Write function to grab the data based on the ID
